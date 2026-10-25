@@ -1,6 +1,3 @@
-MAW 1.3.4
+MAW 1.3.5
 
-- New 1846-48 rank icons, scoreboard rank badges and deployment soldier icons.
-- Colour bearer icon redrawn: staff cut to the stock height, with a waving flag.
-- Onslaught (Survivors): mode descriptions show again under the renamed regiments, and the upgrade wheel uses the period weapon names.
-- Onslaught regiments rebuilt to match the October 23-24 game update.
+- Updated for the latest War of Rights patch (Steam build 26197084).
