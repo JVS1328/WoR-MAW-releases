@@ -1,3 +1,3 @@
-MAW 1.3.8
+MAW 1.3.9
 
-- Updated for the War of Rights patch of October 26, 2026 (Steam build 26223473). The mod's weapon data and player animations now include the patch's own changes, so the mod works with the new game version.
+- Flintlock pistols (US M1836, New Land pattern): between shots they cock with the base game's revolver motion again, the cock and pan moving with it. The two-handed flintlock handling added in 1.3.6 ran longer than the game allows and was cut off mid-way. The Colt Paterson and Walker are unchanged.
