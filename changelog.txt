@@ -1,3 +1,5 @@
-MAW 1.3.5
+MAW 1.3.6
 
-- Updated for the latest War of Rights patch (Steam build 26197084).
+- Flintlock pistols (M1836 and the British New Land pattern) are worked by hand between shots, the cock drawn back with the other hand, instead of being thumb-cocked like a revolver. The Paterson and Walker revolvers are unchanged.
+- The officer's binoculars card now reads Spyglass (a brass draw telescope), on the HUD and the Onslaught upgrade wheel as well.
+- The main-menu logo: the flags behind the nameplate are now Mexican flags (left) and the 28-star United States flag of 1846-48 (right).
