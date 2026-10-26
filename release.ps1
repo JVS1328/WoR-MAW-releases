@@ -44,12 +44,13 @@ if ($paks.Count -eq 0) { throw "No $Prefix*.pak files in $PakDir. Build the mod 
 $tooBig = $paks | Where-Object Length -gt 2GB
 if ($tooBig) { throw "GitHub rejects files over 2 GiB: $($tooBig.Name -join ', '). Split that pak in the build." }
 
-# Freshness: something must have changed since the last release, and the paks must be built after the latest commit.
+# Freshness: something must have changed since the last release, and some pak must be built after the latest commit
+# (the build rewrites only paks whose contents changed, so the others keep their old dates).
 $problems = @()
 if ($lastBuiltFrom -and $head -eq $lastBuiltFrom) { $problems += "No new $Name commits since the last release ($($head.Substring(0,7)))." }
 $headTime = [DateTimeOffset]::FromUnixTimeSeconds([long](Invoke-Native { git -C $Source log -1 --format=%ct })).LocalDateTime
-$oldestPak = ($paks | Sort-Object LastWriteTime | Select-Object -First 1).LastWriteTime
-if ($oldestPak -lt $headTime) { $problems += "Paks were built $oldestPak, before the latest $Name commit ($headTime). Rebuild first." }
+$newestPak = ($paks | Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
+if ($newestPak -lt $headTime) { $problems += "No pak was built after the latest $Name commit ($headTime); newest is $newestPak. Rebuild first." }
 if (Invoke-Native { git -C $Source status --porcelain --untracked-files=no }) { Write-Warning "$Name has uncommitted changes; built-from.txt will record $($head.Substring(0,7)) only." }
 
 $notes = Get-Content $changelog -Raw -ErrorAction SilentlyContinue
