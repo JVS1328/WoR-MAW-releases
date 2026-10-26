@@ -2,7 +2,7 @@
 #   .\release.ps1 1.3.4 -DraftChangelog   fill changelog.txt from the MAW commits since the last release, then edit it
 #   .\release.ps1 1.3.4 -DryRun           check paks, size, game build and freshness without uploading
 #   .\release.ps1 1.3.4                   publish
-#   -Prerelease  publish a test release players don't get     -Force  skip the "nothing new / stale build" checks
+#   -Prerelease  publish a test release players don't get     -Force  skip the "nothing new / stale build / dropped paks" checks
 #   -Full        upload every pak, not just the changed ones, so managers older than 1.0.4 get this version too
 param(
     [Parameter(Mandatory)][string]$Version,
@@ -44,10 +44,9 @@ if ($paks.Count -eq 0) { throw "No $Prefix*.pak files in $PakDir. Build the mod 
 $tooBig = $paks | Where-Object Length -gt 2GB
 if ($tooBig) { throw "GitHub rejects files over 2 GiB: $($tooBig.Name -join ', '). Split that pak in the build." }
 
-# Freshness: something must have changed since the last release, and some pak must be built after the latest commit
+# Freshness: some pak must be built after the latest commit
 # (the build rewrites only paks whose contents changed, so the others keep their old dates).
 $problems = @()
-if ($lastBuiltFrom -and $head -eq $lastBuiltFrom) { $problems += "No new $Name commits since the last release ($($head.Substring(0,7)))." }
 $headTime = [DateTimeOffset]::FromUnixTimeSeconds([long](Invoke-Native { git -C $Source log -1 --format=%ct })).LocalDateTime
 $newestPak = ($paks | Sort-Object LastWriteTime | Select-Object -Last 1).LastWriteTime
 if ($newestPak -lt $headTime) { $problems += "No pak was built after the latest $Name commit ($headTime); newest is $newestPak. Rebuild first." }
@@ -88,6 +87,9 @@ $entries = foreach ($p in $paks | Sort-Object Name) {
     [pscustomobject]@{ Pak = $p; Sha = $sha; Tag = $(if ($changed) { $Tag } else { $old.Tag }); Changed = $changed }
 }
 $upload = @($entries | Where-Object Changed)
+# Nothing new for players unless a pak changed or the game build did (a game patch can do either without a source commit).
+$gamebuildSha = (Get-FileHash $gamebuild -Algorithm SHA256).Hash.ToLowerInvariant()
+if ($upload.Count -eq 0 -and $prev['gamebuild.txt'] -and $prev['gamebuild.txt'].Sha -eq $gamebuildSha) { $problems += "No pak and no game build changed since the last release." }
 $dropped = @($prev.Keys | Where-Object { $_ -like "$Prefix*.pak" -and -not ($paks.Name -contains $_) } | Sort-Object)
 if ($dropped) { $problems += "These paks aren't in the build and would be deleted from players' games: $($dropped -join ', '). Build the full set, or -Force if you meant to drop them." }
 

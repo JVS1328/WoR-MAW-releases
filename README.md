@@ -33,8 +33,10 @@ they open or refresh the manager (GitHub can take ~5 minutes).
    .\release.ps1 1.3.4             # publish
    ```
 
-   The script stops if nothing was committed since the last release, if the paks are older than your
-   latest commit (forgot to rebuild), or if `changelog.txt` wasn't written. `-Force` overrides the first two.
+   The script stops if no pak and no game build changed since the last release, if no pak was built after
+   your latest commit (forgot to rebuild), if a pak from the last version is missing from the build, or if
+   `changelog.txt` wasn't written. `-Force` overrides all but the last. A game-patch rebuild with no new
+   commit is fine: its paks or game build changed.
    On publish it writes the game's Steam build into `gamebuild.txt`, records the source commit in
    `built-from.txt`, commits both with `changelog.txt`, creates release `v1.3.4`, uploads **only the paks whose
    bytes changed**, then pushes `manifest.txt`. A one-file patch uploads in seconds.
