@@ -1,3 +1,3 @@
-MAW 1.3.7
+MAW 1.3.8
 
-- The scoped Baker rifle and the scoped Hall rifle no longer show leftovers of the vanilla telescope in first person (a clear circle where the scope used to be, and a black circle at the lower left of the screen).
+- Updated for the War of Rights patch of October 26, 2026 (Steam build 26223473). The mod's weapon data and player animations now include the patch's own changes, so the mod works with the new game version.
