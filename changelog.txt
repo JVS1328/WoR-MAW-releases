@@ -1,3 +1,29 @@
-MAW 1.4.1
+MAW 1.5.0
 
-- Updated for the War of Rights patch of October 28, 2026 (Steam build 26270438). The mod's weapon data, first-person animations and scoreboard now include the patch's own changes, so the mod works with the new game version.
+- Every regiment now dresses as its own unit, online too. You can still
+  join normal servers; players without the mod see the vanilla game.
+- Mexico: each line regiment wears its own 1839 coatee, with its own
+  lapel and collar colours and its number on the collar. The four light
+  battalions wear the grey light dress with grey trousers striped
+  scarlet. The active militia battalions and San Patricio wear the
+  militia's red facings, every battery the artillery coatee.
+- Mexican drummers and buglers wear a green coat with their regiment's
+  facings.
+- Mexican officers wear their regiment's coatee, with silver epaulettes
+  for the cavalry and silver-strapped ones for the militia.
+- New Mexican shakos: each line regiment's plate with its number, the
+  militia battalions' oval name plates, and grenadier (red band, grenade)
+  and light company (bugle, green pompom) shakos. Officers have the gold
+  cord loop and scalloped chin scales.
+- United States: the regulars fight in the sky-blue fatigue jacket (with
+  a white cotton summer jacket), and officers wear the 1847 shoulder
+  straps and sky-blue trousers with the white stripe.
+- 2nd Dragoons: dragoon jackets, yellow-banded caps, yellow-striped
+  trousers, an orange sash and a gold-laced jacket for officers.
+- The Mounted Riflemen have their own trousers and yellow chevrons, and
+  no longer look like dragoons. The Texans wear buckskin hunting shirts,
+  roundabouts and civilian hats. Indiana wears the jeans hunter's frock
+  coat, the 1st Mississippi red shirts and slouch hats.
+- The regiment selection portraits show the new uniforms. The Mexican
+  portraits now come in two files (z_maw_UI_Textures_CSA.pak and
+  z_maw_UI_Textures_CSA_2.pak).
