@@ -1,12 +1,2 @@
-**__Version 1.5.0__**
-- Every regiment now has its own uniforms
-- Mexican line regiments each wear their own 1839 coatee (own lapel/collar colours, regiment number on the collar)
-- All four Ligeros in the grey light infantry dress with scarlet-striped grey trousers
-- Activos and San Patricio in the militia's red facings, batteries in the artillery coatee
-- Mexican drummers and buglers wear green coats with their regiment's facings
-- Mexican officers wear their regiment's coatee, silver epaulettes for cavalry, silver-strapped for militia
-- New Mexican shakos: regiment number plates, activo name plates (VICTORIA, BRAVOS etc.), grenadier and light company shakos, officers' gold cords and scalloped chin scales
-- US regulars in the sky-blue fatigue jacket (plus a white cotton summer jacket), officers in the 1847 shoulder straps and white-striped sky-blue trousers
-- 2nd Dragoons: dragoon jackets, yellow-band caps, yellow-striped trousers, orange sash, gold-laced officers' jacket
-- Mounted Riflemen no longer look like dragoons; Texans in buckskin hunting shirts and civilian hats; Indiana in the jeans hunter's frock coat; 1st Mississippi in red shirts and slouch hats
-- Regiment selection portraits updated for the new uniforms
+**__Version 1.5.1__**
+- Fixed invisible round hats and palm-leaf hats on the Texans and other volunteers
