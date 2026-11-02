@@ -1,4 +1,2 @@
-**__Version 1.5.2__**
-- New Onslaught loading screens for Drill Camp, Antietam, Harpers Ferry and South Mountain
-- Onslaught loading screen stories now set in northern Mexico, 1846
-- Updated for the November 2 game patch (6th Alabama and 14th North Carolina colour bearers carry both colours)
+**__Version 1.5.3__**
+- Spyglass on horseback: mounted officers now hold and raise the spyglass like a spyglass, not up to their eyes like field glasses
