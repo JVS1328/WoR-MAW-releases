@@ -1,2 +1,4 @@
-**__Version 1.5.1__**
-- Fixed invisible round hats and palm-leaf hats on the Texans and other volunteers
+**__Version 1.5.2__**
+- New Onslaught loading screens for Drill Camp, Antietam, Harpers Ferry and South Mountain
+- Onslaught loading screen stories now set in northern Mexico, 1846
+- Updated for the November 2 game patch (6th Alabama and 14th North Carolina colour bearers carry both colours)
